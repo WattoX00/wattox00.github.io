@@ -3,79 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b18">
 <title>WattoX – Projects</title>
 <link rel="icon" href="logo.png">
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
-<div class="wrapper">
 
-    <div class="header">
-        <h1>WattoX</h1>
-        <p>Projects & experiments</p>
-    </div>
-
-    <div class="grid">
-
-        <a href="https://github.com/wattox00/lysn" target="_blank" class="card">
-            <img src="lysn.png">
-            <div class="title">Lysn</div>
-            <div class="desc">Music player</div>
-        </a>
-
-        <a href="https://github.com/Wattox00/todol" target="_blank" class="card">
-            <img src="todol.png">
-            <div class="title">Todol</div>
-            <div class="desc">Todo app</div>
-        </a>
-
-        <a href="https://github.com/WattoX00/usys" target="_blank" class="card">
-            <img src="usys.png">
-            <div class="title">Usys</div>
-            <div class="desc">Linux user manager</div>
-        </a>
-
-        <a href="https://wattox00.github.io/planseq" target="_blank" class="card">
-            <img src="planseq_logo.png">
-            <div class="title">Planseq</div>
-            <div class="desc">Roadmaps</div>
-        </a>
-
-        <a href="https://wattox00.github.io/e" target="_blank" class="card">
-            <img src="glyph.png">
-            <div class="title">Glyph</div>
-            <div class="desc">English learning tool</div>
-        </a>
-
-        <a href="https://wattox00.github.io/ip" target="_blank" class="card">
-            <img src="ip_logo.png">
-            <div class="title">IP Calculator</div>
-            <div class="desc">Subnet & IP tools</div>
-        </a>
-
-        <a href="https://github.com/WattoX00/arch-setup" target="_blank" class="card">
-            <img src="arch.png">
-            <div class="title">Arch DWM Ricing</div>
-            <div class="desc">Minimal Arch + DWM setup</div>
-        </a>
-
-        <a href="https://wattox00.github.io/portfolio" target="_blank" class="card">
-            <img src="portfolio.png">
-            <div class="title">Portfolio</div>
-            <div class="desc">Personal website</div>
-        </a>
-
-        <a href="https://github.com/WattoX00" target="_blank" class="card">
-            <img src="github_logo.png" style="border-radius:50%;">
-            <div class="title">GitHub</div>
-            <div class="desc">All repositories</div>
-        </a>
-
-    </div>
-
+<!-- Animated background (decorative) -->
+<div class="bg" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <span class="cursor-glow"></span>
 </div>
+
+<main class="wrapper">
+
+    <!-- ============ HEADER ============ -->
+    <header class="header">
+        <img class="header-logo" src="logo.png" alt="" onerror="this.remove()">
+        <h1>Watto<span>X</span></h1>
+        <p class="tagline">
+            <span id="typed" data-phrases="Projects & experiments|Tiny tools, big ideas|Built with curiosity|Linux, networks & web"></span><span class="caret"></span>
+        </p>
+        <p class="count"><b id="count">0</b> things I've built</p>
+    </header>
+
+    <!-- Filter chips are generated automatically from data-tags below -->
+    <nav class="filters" id="filters" aria-label="Filter projects"></nav>
+
+    <!--
+      ============ HOW TO ADD / REMOVE ============
+      ADD:    copy any <a class="card"> block below, paste it inside the grid, edit it.
+      REMOVE: delete the whole <a class="card"> ... </a> block.
+      Nothing else needs to change (filters, animations and counter update by themselves).
+
+      --c        = the card's accent colour
+      data-tags  = space-separated tags (they become filter buttons)
+      class="card featured" = makes a card wide (2 columns on large screens)
+      <span class="badge"> = optional small label
+    -->
+    <section class="grid" id="grid">
+
+        <!-- Vimnix (featured) -->
+        <a href="https://wattox00.github.io/vimnix" target="_blank" rel="noopener" class="card featured" data-tags="web tools" style="--c:#4ade80">
+            <span class="arrow">↗</span>
+            <img src="vimnix.png" alt="" loading="lazy">
+            <div class="text">
+                <div class="title">Vimnix <span class="badge">desktop only</span></div>
+                <div class="desc">A tiny notes site with vim keys. Notes are plain <code>.txt</code> files in a private GitHub repo. The site is fully static on GitHub Pages: no server, no build step.</div>
+            </div>
+        </a>
+
+        <a href="https://github.com/wattox00/lysn" target="_blank" rel="noopener" class="card" data-tags="apps" style="--c:#f472b6">
+            <span class="arrow">↗</span>
+            <img src="lysn.png" alt="" loading="lazy">
+            <div class="text">
+                <div class="title">Lysn</div>
+                <div class="desc">Music player</div>
+            </div>
+        </a>
+
+        <a href="https://github.com/Wattox00/todol" target="_blank" rel="noopener" class="card" data-tags="apps" style="--c:#fbbf24">
+            <span class="arrow">↗</span>
+            <img src="todol.png" alt="" loading="lazy">
+            <div class="text">
+                <div class="title">Todol</div>
+                <div class="desc">Todo app</div>
+            </div>
+        </a>
+
+        <a href="https://github.com/WattoX00/usys" target="_blank" rel="noopener" class="card" data-tags="linux tools" style="--c:#a78bfa">
+            <span class="arrow">↗</span>
+            <img src="usys.png" alt="" loading="lazy">
+            <div class="text">
+                <div class="title">Usys</div>
+                <div class="desc">Linux user manager</div>
+            </div>
+        </a>
+
+        <a href="https://wattox00.github.io/planseq" target="_blank" rel="noopener" class="card" data-tags="web tools" style="--c:#34d399">
+            <span class="arrow">↗</span>
+            <img src="planseq_logo.png" alt="" loading="lazy">
+            <div class="text">
+                <div class="title">Planseq</div>
+                <div class="desc">Roadmaps</div>
+            </div>
+        </a>
+
+        <a href="https://wattox00.github.io/e" target="_blank" rel="noopener" class="card" data-tags="web tools" style="--c:#60a5fa">
+            <span class="arrow">↗</span>
+            <img src="glyph.png" alt="" loading="lazy">
+            <div class="text">
+                <div class="title">Glyph</div>
+                <div class="desc">English learning tool</div>
+            </div>
+        </a>
+
+        <a href="https://wattox00.github.io/ip" target="_blank" rel="noopener" class="card" data-tags="web network tools" style="--c:#38bdf8">
+            <span class="arrow">↗</span>
+            <img src="ip_logo.png" alt="" loading="lazy">
+            <div class="text">
+                <div class="title">IP Calculator</div>
+                <div class="desc">Subnet & IP tools</div>
+            </div>
+        </a>
+
+        <a href="https://github.com/WattoX00/arch-setup" target="_blank" rel="noopener" class="card" data-tags="linux" style="--c:#22d3ee">
+            <span class="arrow">↗</span>
+            <img src="arch.png" alt="" loading="lazy">
+            <div class="text">
+                <div class="title">Arch DWM Ricing</div>
+                <div class="desc">Minimal Arch + DWM setup</div>
+            </div>
+        </a>
+
+        <a href="https://wattox00.github.io/portfolio" target="_blank" rel="noopener" class="card" data-tags="web" style="--c:#fb923c">
+            <span class="arrow">↗</span>
+            <img src="portfolio.png" alt="" loading="lazy">
+            <div class="text">
+                <div class="title">Portfolio</div>
+                <div class="desc">Personal website</div>
+            </div>
+        </a>
+
+        <a href="https://github.com/WattoX00" target="_blank" rel="noopener" class="card" data-tags="links" style="--c:#e5e7eb">
+            <span class="arrow">↗</span>
+            <img src="github_logo.png" alt="" loading="lazy" style="border-radius:50%;">
+            <div class="text">
+                <div class="title">GitHub</div>
+                <div class="desc">All repositories</div>
+            </div>
+        </a>
+
+    </section>
+
+    <p class="empty" id="empty" hidden>Nothing here yet 👀</p>
+
+    <footer class="footer">Made by WattoX · hover, tilt & click things ✨</footer>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
-
